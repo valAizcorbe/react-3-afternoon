@@ -19,31 +19,26 @@ export default class Post extends Component {
       editing: false,
       showMasterMenu: false
     };
-
-    this.hideEdit = this.hideEdit.bind(this);
-    this.showEdit = this.showEdit.bind(this);
-    this.toggleMasterMenu = this.toggleMasterMenu.bind(this);
-    this.hideMasterMenu = this.hideMasterMenu.bind(this);
   }
 
   // This puts the post into EDIT mode when the EDIT button is clicked from the drop-down
-  showEdit() {
+  showEdit = () => {
     this.setState({ editing: true, showMasterMenu: false });
   }
 
   // This puts the post back into normal viewing mode when the CANCEL button is clicked
   // This method is passed down to the <Edit /> component via props
-  hideEdit() {
+  hideEdit = () => {
     this.setState({ editing: false });
   }
 
   // This toggles the drop-down when the three dots in the top right corner of a post are clicked
-  toggleMasterMenu() {
+  toggleMasterMenu = () => {
     this.setState({ showMasterMenu: !this.state.showMasterMenu });
   }
 
   // This hides the drop-down when the post is clicked anywhere
-  hideMasterMenu() {
+  hideMasterMenu = () => {
     if (this.state.showMasterMenu === true) {
       this.setState({ showMasterMenu: false });
     }
